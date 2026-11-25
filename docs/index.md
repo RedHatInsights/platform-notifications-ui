@@ -1,4 +1,4 @@
-# Platform Settings UI docs
+# Platform Notifications UI docs
 
 - [Frontend Operator](./frontend-operator/index.md)
   - [Basic configuration](./frontend-operator/basic-configuration.md)

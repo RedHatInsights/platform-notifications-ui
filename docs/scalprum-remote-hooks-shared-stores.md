@@ -64,7 +64,7 @@ A **remote hook** is a React hook exposed via Module Federation that can be cons
 import { useRemoteHook } from '@scalprum/react-core';
 
 const { hookResult, loading, error } = useRemoteHook<FedModulesStoreResult>({
-  scope: 'platformSettingsUi',
+  scope: 'platformNotificationsUi',
   module: './frontendModules/useFedModulesStore',
   args: undefined, // Optional: omit if hook takes no arguments
 });
@@ -377,7 +377,7 @@ const FedModulesDataContainer: React.FC = () => {
     loading: storeLoading,
     error: storeError,
   } = useRemoteHook<FedModulesStoreResult>({
-    scope: 'platformSettingsUi',  // Module federation scope
+    scope: 'platformNotificationsUi',  // Module federation scope
     module: './frontendModules/useFedModulesStore',  // Exposed module path
     args: undefined,  // Optional: omit if hook takes no arguments
   });
@@ -398,7 +398,7 @@ const FedModulesDataContainer: React.FC = () => {
 
 - **`scope`**: The Module Federation scope name (typically your app name in camelCase)
   - Find this in your `package.json` under `insights.appname` (converted to camelCase)
-  - Example: `"platform-settings-ui"` becomes `"platformSettingsUi"`
+  - Example: `"platform-notifications-ui"` becomes `"platformNotificationsUi"`
 
 - **`module`**: The exposed module path from `fec.config.js`
   - Must match exactly what's in `moduleFederation.exposes`
@@ -547,7 +547,7 @@ Create **multiple specialized hooks** from the same store:
 ```typescript
 // In a filter input component
 const { filterHook } = useRemoteHook<FedModulesFilterResult>({
-  scope: 'platformSettingsUi',
+  scope: 'platformNotificationsUi',
   module: './frontendModules/useFedModulesFilter',  // Optimized filter hook
 });
 
@@ -626,7 +626,7 @@ Pass your return type to `useRemoteHook`:
 
 ```typescript
 const { hookResult } = useRemoteHook<FedModulesStoreResult>({
-  scope: 'platformSettingsUi',
+  scope: 'platformNotificationsUi',
   module: './frontendModules/useFedModulesStore',
 });
 
@@ -813,7 +813,7 @@ interface CounterStoreResult {
 
 const CounterDisplay: React.FC = () => {
   const { hookResult, loading, error } = useRemoteHook<CounterStoreResult>({
-    scope: 'platformSettingsUi',
+    scope: 'platformNotificationsUi',
     module: './hooks/useCounterStore',
     // args parameter omitted - hook takes no arguments
   });
@@ -1051,7 +1051,7 @@ const { hookResult } = useRemoteHook({
 ```typescript
 // ❌ Bad - using package name with dashes
 const { hookResult } = useRemoteHook({
-  scope: 'platform-settings-ui',  // Wrong!
+  scope: 'platform-notifications-ui',  // Wrong!
   module: './hooks/useStore',
 });
 ```
@@ -1061,14 +1061,14 @@ const { hookResult } = useRemoteHook({
 ```typescript
 // ✅ Good - camelCase scope name
 const { hookResult } = useRemoteHook({
-  scope: 'platformSettingsUi',  // Correct!
+  scope: 'platformNotificationsUi',  // Correct!
   module: './hooks/useStore',
 });
 ```
 
 Find your scope name:
 1. Check `package.json` → `insights.appname`
-2. Convert to camelCase: `platform-settings-ui` → `platformSettingsUi`
+2. Convert to camelCase: `platform-notifications-ui` → `platformNotificationsUi`
 
 ### 3. Module Path Mismatch
 

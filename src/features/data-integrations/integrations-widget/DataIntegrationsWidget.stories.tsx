@@ -9,7 +9,7 @@ import {
 } from './__mocks__/integrationCounts';
 import { createErrorSourcesHandler } from '../data/mocks/sources';
 
-const BASENAME = '/settings/platform-settings';
+const BASENAME = '/settings/platform-notifications';
 
 const meta: Meta<typeof DataIntegrationsWidget> = {
   title: 'Features/DataIntegrations/DataIntegrationsWidget',

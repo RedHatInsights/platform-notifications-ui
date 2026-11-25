@@ -80,7 +80,7 @@ const preview: Preview = {
       return (
         <StorybookMockProvider
           bundle="settings"
-          app="platform-settings"
+          app="platform-notifications"
           environment={
             parameters.environment === 'production' ? 'production' : 'stage'
           }

@@ -91,7 +91,7 @@ Navigation goes through `useAppNavigate`, which prefixes Chrome's basename
 both `/settings/data-integrations` and `/settings/data-integrations/about` the basename is
 `/settings/data-integrations` and relative navigation resolves correctly. Stories reproduce
 this by nesting a `StorybookMockProvider` with `app="data-integrations"`; without it the
-preview-level default (`platform-settings`) would give the wrong basename.
+preview-level default (`platform-notifications`) would give the wrong basename.
 
 ## Data layer (RHCLOUD-49536)
 
@@ -307,5 +307,5 @@ either. Their URL shapes are intentionally not guessed at here.
 ## Deployment
 
 `deploy/frontend.yaml` already carries the `data-integrations` nav item and the
-`platform-settings-integrations` search entry, both gated on the `platform.settings.redesign`
+`platform-notifications-integrations` search entry, both gated on the `platform.settings.redesign`
 feature flag. The sidebar entry only appears with that flag on.

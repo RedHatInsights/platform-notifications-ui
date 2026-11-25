@@ -17,7 +17,7 @@ import { MemoryRouter, Route, Routes, useLocation } from 'react-router-dom';
 import React from 'react';
 import { AppLink } from './AppLink';
 
-const BASENAME = '/settings/platform-settings';
+const BASENAME = '/settings/platform-notifications';
 
 const LocationDisplay: React.FC = () => {
   const location = useLocation();

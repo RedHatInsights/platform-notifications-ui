@@ -1,6 +1,6 @@
-# platform-settings-ui
+# platform-notifications-ui
 
-Consolidated frontend application for Red Hat Hybrid Cloud Console platform settings, combining notifications, sources, and user preferences into a single modern codebase.
+Red Hat Hybrid Cloud Console frontend for Alert Manager and Event Log. It also currently hosts Platform Settings Overview and Data Integrations.
 
 ## Initial etc/hosts setup
 
