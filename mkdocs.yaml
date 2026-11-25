@@ -1,5 +1,5 @@
 docs_dir: ./docs
-site_name: Platform Settings UI
+site_name: Platform Notifications UI
 
 nav:
   - Home: index.md

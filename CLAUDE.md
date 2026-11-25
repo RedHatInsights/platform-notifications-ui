@@ -1,8 +1,8 @@
-# platform-settings-ui
+# platform-notifications-ui
 
-Consolidated frontend application for the Red Hat Hybrid Cloud Console (HCC) platform settings area. Combines notifications, sources, and user preferences into a single modern codebase.
+Red Hat Hybrid Cloud Console (HCC) frontend for Alert Manager and Event Log. It also currently hosts Platform Settings Overview and Data Integrations.
 
-**Repository**: [RedHatInsights/platform-settings-ui](https://github.com/RedHatInsights/platform-settings-ui)
+**Repository**: [RedHatInsights/platform-notifications-ui](https://github.com/RedHatInsights/platform-notifications-ui)
 **Team**: Platform Experience Services
 **Route**: `/settings`
 
@@ -20,14 +20,14 @@ This repo follows the [Experience UI Governance](https://github.com/RedHatInsigh
 HCC frontend applications are **micro-frontends** loaded into the Chrome shell via Module Federation:
 
 ```
-+---------------------------------------------------+
-|  Chrome Shell (Navigation, Auth, Services)        |
-|  +-----------------------------------------------+|
-|  |  platform-settings-ui (Module Federation)     ||
-|  |  - ServiceProvider -> QueryClient -> Router   ||
-|  |  - Feature islands under src/features/        ||
-|  +-----------------------------------------------+|
-+---------------------------------------------------+
++-----------------------------------------------------+
+|  Chrome Shell (Navigation, Auth, Services)          |
+|  +-------------------------------------------------+|
+|  |  platform-notifications-ui (Module Federation)  ||
+|  |  - ServiceProvider -> QueryClient -> Router      ||
+|  |  - Feature islands under src/features/           ||
+|  +-------------------------------------------------+|
++-----------------------------------------------------+
 ```
 
 **Key architectural patterns**:
@@ -43,7 +43,7 @@ HCC frontend applications are **micro-frontends** loaded into the Chrome shell v
 ## Project Structure
 
 ```
-platform-settings-ui/
+platform-notifications-ui/
 +-- src/
 |   +-- Components/        # Shared React components (AppLink, ErrorBoundary, OopsPage, NoPermissionsPage)
 |   +-- features/          # Feature islands (self-contained feature directories)
@@ -302,8 +302,8 @@ The `deploy/frontend.yaml` file configures the Frontend Operator for deployment.
 ### Konflux CI
 
 Tekton pipelines in `.tekton/` handle CI:
-- `platform-settings-ui-pull-request.yaml` -- runs on PRs
-- `platform-settings-ui-push.yaml` -- runs on pushes to main
+- `platform-notifications-ui-pull-request.yaml` -- runs on PRs
+- `platform-notifications-ui-push.yaml` -- runs on pushes to main
 
 ## Common Commands Reference
 
@@ -397,4 +397,4 @@ Configured in `.mcp.json`, automatically loaded by Claude Code:
 
 **Team**: Platform Experience Services
 **Slack**: `#platform-experience-services`, `#forum-consoledot-ui`
-**Repository**: https://github.com/RedHatInsights/platform-settings-ui
+**Repository**: https://github.com/RedHatInsights/platform-notifications-ui

@@ -17,7 +17,7 @@ Determine the repository name from the git remote:
 git remote get-url origin
 ```
 
-Extract the `<org>/<repo-name>` from the URL (e.g., `RedHatInsights/platform-settings-ui`).
+Extract the `<org>/<repo-name>` from the URL (e.g., `RedHatInsights/platform-notifications-ui`).
 
 ## Step 2: Check Jira for relevant issues
 

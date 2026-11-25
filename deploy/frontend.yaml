@@ -3,38 +3,38 @@
 apiVersion: v1
 kind: Template
 metadata:
-  name: platform-settings-ui
+  name: platform-notifications-ui
 objects:
   - apiVersion: cloud.redhat.com/v1alpha1
     kind: Frontend
     metadata:
-      name: platform-settings-ui
+      name: platform-notifications-ui
     spec:
       feoConfigEnabled: true
       envName: ${ENV_NAME}
       title: Platform Settings
-      deploymentRepo: https://github.com/RedHatInsights/platform-settings-ui
+      deploymentRepo: https://github.com/RedHatInsights/platform-notifications-ui
       API:
         versions:
           - v1
       frontend:
         paths:
-          - /apps/platform-settings-ui
+          - /apps/platform-notifications-ui
       image: ${IMAGE}:${IMAGE_TAG}
       pushCacheEnabled: true
 
       module:
-        manifestLocation: '/apps/platform-settings-ui/fed-mods.json'
+        manifestLocation: '/apps/platform-notifications-ui/fed-mods.json'
         defaultDocumentTitle: 'Platform Settings | Settings'
         modules:
-          - id: platform-settings-root
+          - id: platform-notifications-root
             module: './RootApp'
             routes:
               - pathname: /settings
                 exact: false
 
       bundleSegments:
-        - segmentId: platform-settings
+        - segmentId: platform-notifications
           bundleId: settings
           position: 200
           navItems:
@@ -72,7 +72,7 @@ objects:
                     - true
 
       searchEntries:
-        - id: platform-settings-alertmanager
+        - id: platform-notifications-alertmanager
           title: Alert Manager
           href: /settings/alertmanager
           description: Manage alert configurations and notification settings for your organization.
@@ -85,7 +85,7 @@ objects:
               args:
                 - platform.settings.redesign
                 - true
-        - id: platform-settings-eventlog
+        - id: platform-notifications-eventlog
           title: Event Log
           href: /settings/eventlog
           description: View and filter platform event logs for your organization.
@@ -98,7 +98,7 @@ objects:
               args:
                 - platform.settings.redesign
                 - true
-        - id: platform-settings-integrations
+        - id: platform-notifications-integrations
           title: Data Integrations
           href: /settings/data-integrations
           description: Manage data sources and integrations for the Hybrid Cloud Console.
@@ -168,4 +168,4 @@ parameters:
   - name: IMAGE_TAG
     required: true
   - name: IMAGE
-    value: quay.io/redhat-services-prod/rh-platform-experien-tenant/platform-settings-ui
+    value: quay.io/redhat-services-prod/rh-platform-experien-tenant/platform-notifications-ui

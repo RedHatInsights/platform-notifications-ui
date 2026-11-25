@@ -1,5 +1,5 @@
 {
-  "name": "platform-settings-ui",
+  "name": "platform-notifications-ui",
   "version": "1.2.0",
   "private": false,
   "engines": {
@@ -87,7 +87,7 @@
     "yaml": "^2.9.0"
   },
   "insights": {
-    "appname": "platform-settings-ui"
+    "appname": "platform-notifications-ui"
   },
   "msw": {
     "workerDirectory": [

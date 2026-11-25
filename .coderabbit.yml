@@ -1,8 +1,8 @@
-# CodeRabbit Configuration for Platform Settings UI
+# CodeRabbit Configuration for Platform Notifications UI
 # HCC (Hybrid Cloud Console) Frontend Application
 # Last updated: 2026-07-23
 #
-# Consolidated platform settings application (notifications, sources, user-preferences).
+# Notifications application that also hosts Platform Settings Overview and Data Integrations.
 # Reviews focus on code quality, pattern adherence, and best practices.
 
 # Language for reviews and chat responses
@@ -415,4 +415,4 @@ knowledge_base:
     scope: "auto"
 
 # Tone instructions for reviews
-tone_instructions: "Consolidated platform settings application for HCC. Be professional, educational, and constructive. Focus on maintainability and best practices. Distinguish critical issues from nice-to-haves. Explain why behind suggestions."
+tone_instructions: "Platform Notifications frontend for HCC. Be professional, educational, and constructive. Focus on maintainability and best practices. Distinguish critical issues from nice-to-haves. Explain why behind suggestions."

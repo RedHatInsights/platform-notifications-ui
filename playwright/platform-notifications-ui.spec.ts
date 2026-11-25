@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { disableCookiePrompt } from '@redhat-cloud-services/playwright-test-auth';
 
-test.describe('platform settings ui', async () => {
+test.describe('platform notifications ui', async () => {
     test.beforeEach(async ({page}): Promise<void> => {
         await disableCookiePrompt(page);
         await page.goto('/', { waitUntil: 'load', timeout: 60000 });
